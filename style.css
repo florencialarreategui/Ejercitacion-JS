@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+  }
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-color: #759AAB;
+
+    
+}
+.card-div{
+    padding-top: 150px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+.card{
+    width: 15vw;
+    height: 30vh;
+    background-color: #D9DCA4;
+    display: flex;
+    justify-content: center;
+    border-radius: 8px;
+    padding-top: 30px;
+}
+h1{
+    color: #3F2E56;
+    font-family: sans-serif;
+    font-size: 50px;
+}
+.ruleta-container{
+    background-color: #B8C6A6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+}
+.ruleta-div{
+    display: flex;
+    justify-content: space-between;
+}
+.div-numero-ruleta{
+    margin-top: 100px;
+    width: 20vh;
+    height: 20vh;
+    background-color:#FAF2A1;
+}
+.div-ganador{
+    display: none;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+button{
+    background-color: #3F2E56;
+    width: 50px;
+    height: 35px;
+}
+#acertaste-numero{
+ display: none;
+}
+#acertaste-color{
+    display: none;
+}
+.rojo{
+    background-color: red;
+}
+.negro{
+     background-color: black;
+}

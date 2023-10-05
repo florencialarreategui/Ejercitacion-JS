@@ -3,9 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Juegos</title>
+   
 </head>
 <body>
+    <section class="container card-container">
+    <div class=" card-div">
+        <card class="card">
+            <h4>Ruleta</h4>
+        </card>
+        <card class="card">
+            <h4>Ahorcado</h4>
+        </card>
+        <card class="card">
+            <h4>Preguntados</h4>
+        </card>
+    </div>
+</section>
+<section class="container ruleta-container">
+    <div class="ruleta-div">
+        <h1>Ruleta</h1>
+    <div id="div-elegir-numero">
+        <div id="div-color-ruleta"class="div-numero-ruleta">
+            <h1 id="numero-ruleta-elegido">0</h1>
+        </div>
+        <form action="">
+            <label for="color">
+                <select name="select" id="select-color">
+                    <option value="valor">Elija un valor</option>
+                    <option value="rojo">Rojo</option>
+                    <option value="negro">Negro</option>
+                  </select>
+                  </label>
+                  <label for="numeros">
+                    <input type="number" name="numero" id="input-numeros">
+                  </label>
+                </form>
+        <button id="boton-tirar">Tirar</button>
+    </div>
+    <div class="div-ganador" id="div-ganador">
+        <div id="div-color-ganador" class="div-numero-ruleta">
+            <h1 id="numero-ganador">0</h1>
+        </div>
+    </div>
+    </div>
+    <div class="div-ganaste">
+    <h1 id="acertaste-numero">Acertaste el número!!</h1>
+    <h1 id="acertaste-color">Acertaste el color!!</h1>
+</div>
+</section>
+<section class="container ahorcado-container">
+    <div class="ahorcado-div">
+        <h1>Ahorcado</h1>
+    </div>
+</section>
+<section class="container preguntados-container">
+    <div class="preguntados-div">
+        <h1>Preguntados</h1>
+    </div>
+</section>
+
     <script src="index.js"></script>
 </body>
 </html>

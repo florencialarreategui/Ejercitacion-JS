@@ -1,3 +1,14 @@
+const botonTirar = document.getElementById("boton-tirar")
+const acertasteColor = document.getElementById("acertaste-color")
+const acertasteNumero = document.getElementById("acertaste-numero")
+const cuadradoNumeroRuleta = document.getElementById("div-color-ruleta")
+const inputNumeros = document.getElementById("input-numeros")
+const selectColor = document.getElementById("select-color")
+const numeroRuleta = document.getElementById("numero-ruleta-elegido")
+const numeroGanador = document.getElementById("numero-ganador")
+const colorGanador = document.getElementById("div-color-ganador")
+const divGanador = document.getElementById("div-ganador")
+// document.getElementById("myAnchor").
 //Ruleta
 //el usuario debe elgir un numero entre 0 y 32
 //hay que ver el tema de los colores si se puede elegir un color
@@ -8,56 +19,82 @@
 //   confirm("¿Quieres jugar a la ruleta? :)")
 // }
 // greet()
+// addEventListener("input", function(event){
+//   event.preventDefault()
+// });
 
+//---------------color y numeros random-------------------------
 const randomNumberFunction = (numero) =>{
-   return Math.floor((Math.random()* numero)+1)
+  return Math.floor((Math.random()* numero)+1)
 }
-    
-console.log(randomNumberFunction(32))
-const randomNumber = randomNumberFunction(32)
+   
+console.log(randomNumberFunction(37))
+const randomNumber = randomNumberFunction(37)
 console.log(randomNumber)
-const rojo = "Rojo"
-const negro = "Negro"
 
 const randomColor = () =>{
     if(randomNumber % 2 == 0){
-     
-        return  rojo
+      colorGanador.classList.add("rojo")
+      return "rojo"
     }
     else{
-        return negro 
+      colorGanador.classList.add("negro")
+      return "negro"
     }
 }
-console.log(randomColor())
+const colorAleatorio = randomColor
 
-
-// const startGame = () =>{
-//     if(greet){
-//         prompt("Escriba un número del 0 al 32")
-//     }
-//     else{
-//         alert("Ufa :(")
-//     }
+// const putRandomColor = () =>{
+//   if(selectColor.value === "rojo"){
+//     cuadradoNumeroRuleta.classList.add("rojo")
+//   }
+//    else if(selectColor.value === "negro"){
+//     cuadradoNumeroRuleta.classList.add("negro")
+//   }
 // }
-const userNumber = prompt("Escriba un número del 0 al 32")
-
-console.log(randomNumber)
+// putRandomColor()
 
 
-const showResults = () =>{
-     alert(`El numero es ${randomNumber} color ${randomColor}`)
+//----------------------valor del input lo paso al div de numero seleccionado
+inputNumeros.addEventListener("change", ()=>{
+  numeroRuleta.textContent = inputNumeros.value; 
+});
+botonTirar.addEventListener("click", ()=>{
+  divGanador.style.display = "flex"
+  numeroGanador.textContent = randomNumber; 
+  randomColor()
+  youWin()
+});
+
+
+
+selectColor.addEventListener("change", ()=>{
+  if(selectColor.value === "rojo"){
+    cuadradoNumeroRuleta.classList.add("rojo")
+  }
+   else if(selectColor.value === "negro"){
+    cuadradoNumeroRuleta.classList.add("negro") 
+  }
+
+});
+
+const youWin = () =>{
+  if(randomNumber == inputNumeros.value && colorAleatorio == selectColor.value){
+    acertasteNumero.style.display = "flex"
+    acertasteColor.style.display = "flex"
+  }
+  else if(randomNumber == inputNumeros.value ){
+    acertasteNumero.style.display = "flex"
+  }
+  else if(randomColor == selectColor.value){
+    acertasteColor.style.display = "flex"
+  }
+  else{
+      console.error("no acertaste") 
+  }
 }
 
-showResults()
-const compareNumbers = () =>{
-    if(randomNumber == userNumber){
-        console.log("acertaste")
-    }
-    else{
-        console.error("no acertaste") 
-    }
-   
-}
+
 
 const giveMessage = (callback) =>{
     if(callback){
@@ -67,10 +104,20 @@ const giveMessage = (callback) =>{
         alert("Vuelve a intentarlo")
     }
 }
+// esta funcion tendra qeu tomar 4 funcioens de apramentros, 1 para saber si gano el numero,
+ //otra para ver si gano el color, otra para cambiar de color el cuadrado y otra para poner el numero en el caudrado
+const mostrarresultado = () =>{
+    console.log("Hola")
+}
 
+botonTirar.onclick = mostrarresultado
+
+// botonTirar.addEventListener("click", (event) => {
+//     console.log("Hola");
+//   });
 // compareNumbers()
-giveMessage(compareNumbers)
+// giveMessage(compareNumbers)
 
-//Incorporamos colores 
+// //Incorporamos colores 
 
 
